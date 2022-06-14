@@ -1,2 +1,2 @@
-# tuya-lock-android-sdk
-Tuya Lock Android SDK
+# tuya-lock-android-demo
+Tuya Lock Android Demo
