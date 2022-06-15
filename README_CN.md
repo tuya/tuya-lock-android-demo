@@ -1,4 +1,4 @@
-# 涂鸦 智能门锁 Adnroid SDK 示例
+# 涂鸦 智能门锁 Android SDK 示例
 
  [English](README.md) | [中文版](README-zh.md)
 

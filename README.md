@@ -6,7 +6,7 @@
 
 ## Overview
 
-This sample demonstrates how to build a smart lock app based on Smart Lock App SDK for Android.
+This sample demonstrates how to use the smart door lock Android SDK to implement audio and video functions.
 
 ## Prerequisites
 
@@ -48,4 +48,4 @@ This sample demonstrates how to build a smart lock app based on Smart Lock App S
 
 ## References
 
-For more information about Tuya Smart Lock App SDK, see [App SDK](https://developer.tuya.com/cn/docs/app-development/smartlock?id=Ka6o1ib18780b).
+For more information about Tuya Smart Lock  SDK, see [App SDK](https://developer.tuya.com/en/docs/app-development/smartlock?id=Ka6o1ib18780b).
