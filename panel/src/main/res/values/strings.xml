@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lock_state">Lock State</string>
+    <string name="lock_remote_unlock">Remote Unlock</string>
+    <string name="lock_request_picture_video">Request Picture And Video</string>
+    <string name="lock_request_latest_picture">Request Latest Picture</string>
+    <string name="lock_unlock">Unlock</string>
+    <string name="lock_refuse_unlock">Refuse Unlock</string>
+    <string name="lock_remote_request_unlock">Remote Request Unlock</string>
+    <string name="lock_snapshot">Snapshot</string>
+    <string name="lock_recorder">Recorder</string>
+    <string name="lock_video_talk">Talk</string>
+    <string name="lock_mute">Mute</string>
+    <string name="lock_force_anti_lock">Force Anti-lock</string>
+    <string name="lock_retake_photo">Retake Photo</string>
+    <string name="lock_ignore">Ignore</string>
+    <string name="lock_lock_panel">Lock Control Panel</string>
+    <string name="lock_video_show">Lock Video And Audio Ability Show Demo</string>
+    <string name="lock_try_to_trigger_doorbell">Tips:Try to trigger the doorbell in this page</string>
+</resources>

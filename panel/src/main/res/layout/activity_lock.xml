@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.tuya.smart.bizubundle.panel.demo.videolock.LockActivity">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_state"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:text="@string/lock_lock_panel"
+                android:textColor="@color/red"
+                android:gravity="center"
+                android:textSize="@dimen/ts_18"
+                android:paddingBottom="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_10"
+                />
+            <TextView
+                android:id="@+id/tv_lock_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="@dimen/ts_18"
+                android:text="@string/lock_video_show"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_10"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <com.tuya.drawee.view.DecryptImageView
+                    android:id="@+id/div_picture"
+                    android:layout_width="@dimen/dp_300"
+                    android:layout_height="@dimen/dp_300"
+                    android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_remote_unlock"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="@string/lock_remote_unlock"
+                    android:gravity="center"
+                    android:background="@drawable/button_bg_shape"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_force_anti_lock"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="@string/lock_force_anti_lock"
+                    android:background="@drawable/button_bg_shape"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    />
+                <TextView
+                    android:id="@+id/tv_request_latest_picture"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="@string/lock_request_latest_picture"
+                    android:gravity="center"
+                    android:background="@drawable/button_bg_shape"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="@string/lock_try_to_trigger_doorbell"
+                    android:gravity="center"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+</LinearLayout>
