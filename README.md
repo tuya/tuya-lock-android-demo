@@ -1,7 +1,7 @@
 
 # Tuya Smart Lock SDK Sample for Android
 
-[English](README.md) | [中文版](README-zh.md)
+[English](README.md) | [中文版](README_CN.md)
 
 ---
 
@@ -44,3 +44,7 @@ This sample demonstrates how to build a smart lock app based on Smart Lock SDK f
 ## References
 
 For more information about Tuya Smart Lock SDK, see [Smart Lock SDK](https://developer.tuya.com/en/docs/app-development/smartlock?id=Ka6o1ib18780b).
+
+## License
+
+For more information, see [MIT License](LICENSE).

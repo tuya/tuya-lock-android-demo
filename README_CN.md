@@ -43,3 +43,7 @@
 ## 开发文档
 
 关于智能门锁 Android SDK 的更多信息，请参考： [App SDK](https://developer.tuya.com/cn/docs/app-development/smartlock?id=Ka6o1ib18780b)。
+
+## 许可
+
+更多信息，见[MIT License](LICENSE)
