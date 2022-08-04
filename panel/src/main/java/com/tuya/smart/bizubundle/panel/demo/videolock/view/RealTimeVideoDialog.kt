@@ -91,7 +91,6 @@ class RealTimeVideoDialog(override var mContext: Context,override var mDevId: St
         })
         cameraView!!.createVideoView(mDevId)
 
-
         val windowManager = mContext.getSystemService(WINDOW_SERVICE) as WindowManager
         val width = windowManager.defaultDisplay.width
         val height = width * ASPECT_RATIO_WIDTH / ASPECT_RATIO_HEIGHT

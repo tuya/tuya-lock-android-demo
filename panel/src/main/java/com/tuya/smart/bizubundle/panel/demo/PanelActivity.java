@@ -13,8 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.tuya.smart.api.MicroContext;
 import com.tuya.smart.api.service.MicroServiceManager;
+import com.tuya.smart.bizubundle.panel.demo.videolock.BLELockActivity;
 import com.tuya.smart.bizubundle.panel.demo.videolock.LockActivity;
 //import com.tuya.smart.clearcache.api.ClearCacheService;
+import com.tuya.smart.bizubundle.panel.demo.videolock.LockFunctionActivity;
 import com.tuya.smart.commonbiz.bizbundle.family.api.AbsBizBundleFamilyService;
 import com.tuya.smart.home.sdk.TuyaHomeSdk;
 import com.tuya.smart.home.sdk.bean.HomeBean;
@@ -30,6 +32,7 @@ import java.util.List;
 public class PanelActivity extends AppCompatActivity {
 
     private HomeAdapter mAdapter;
+    private String wifiCategory = "wf_ms,wf_jtmspro,videolock_1w_1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,10 +78,22 @@ public class PanelActivity extends AppCompatActivity {
     }
 
     private void gotoLockPanel(String devId) {
-        Intent intent = new Intent(this, LockActivity.class);
-        intent.putExtra("devId",devId);
-        startActivity(intent);
+        DeviceBean deviceBean = TuyaHomeSdk.getDataInstance().getDeviceBean(devId);
+        if(wifiCategory.contains(deviceBean.getCategoryCode())){
+            Intent intent = new Intent(this, LockFunctionActivity.class);
+            intent.putExtra("devId",devId);
+            startActivity(intent);
+        }else {
+            Intent intent = new Intent(this, BLELockActivity.class);
+            intent.putExtra("devId",devId);
+            startActivity(intent);
+        }
+
+
+
     }
+
+
 
     /**
      * you must implementation AbsBizBundleFamilyService

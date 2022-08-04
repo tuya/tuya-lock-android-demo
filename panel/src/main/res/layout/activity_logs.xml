@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="@dimen/dp_30"
+    android:orientation="vertical"
+    tools:context=".videolock.LogsActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btn_latest_log"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/button_bg_shape"
+                android:text="@string/lock_get_a_latest_log"
+                android:textSize="@dimen/ts_20"
+                android:layout_marginTop="@dimen/ts_20"
+                />
+            <TextView
+                android:id="@+id/tv_show_new_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dp_15"
+                android:paddingBottom="@dimen/dp_15"
+                android:gravity="center"
+                />
+            <Button
+                android:id="@+id/btn_log_list"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/button_bg_shape"
+                android:text="@string/lock_get_logs_list"
+                android:textSize="@dimen/ts_20"
+                android:layout_marginTop="@dimen/ts_20"
+                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_logs_list"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

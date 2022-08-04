@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".videolock.BLELockActivity">
+
+    <TextView
+        android:id="@+id/tv_query_setting"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:text="@string/lock_query_audio_setting"
+        android:background="@drawable/button_bg_shape"
+        android:gravity="center"
+
+        />
+    <TextView
+        android:id="@+id/tv_set_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:text="@string/lock_set_audio_pwd"
+        android:background="@drawable/button_bg_shape"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dp_10"
+        />
+
+</LinearLayout>

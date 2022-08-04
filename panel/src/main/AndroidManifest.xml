@@ -1,14 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.tuya.smart.bizubundle.panel.demo">
-    <!-- Android 11 attribute-->
+
     <application tools:remove="android:preserveLegacyExternalStorage">
+        <activity
+            android:name=".videolock.TempPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".videolock.MemberManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".videolock.BLELockActivity"
+            android:exported="false" />
+        <activity
+            android:name=".videolock.LogsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".videolock.LockFunctionActivity"
+            android:exported="false" />
         <activity android:name=".PanelActivity" />
         <activity
-            android:name="com.tuya.smart.bizubundle.panel.demo.videolock.view.RealTimeRequestActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.tuya.smart.bizubundle.panel.demo.videolock.LockActivity"
+            android:name=".videolock.LockActivity"
             android:exported="false" />
     </application>
+
 </manifest>

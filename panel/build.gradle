@@ -23,6 +23,10 @@ android {
     }
 
 }
+configurations.all {
+    // check for updates every build
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
@@ -53,5 +57,9 @@ dependencies {
         exclude group: 'com.squareup.okhttp3', module: 'okhttp'
     }
 
-    api "com.tuya.smart:tuyasmart-lock-sdk:1.2.0"
+    api "com.tuya.smart:tuyasmart-lock-sdk:1.2.4"
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.tuya.smart:tuyasmart-ipcsdk:3.34.5'
 }
