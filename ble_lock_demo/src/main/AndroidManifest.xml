@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tuya.lock.demo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application>
+        <activity
+            android:name=".list.LockListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".detail.BleLockDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".user.UserMemberActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".state.ConnectStateActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".unlock.BleSwitchLockActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".records.BleLockRecordsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".setting.LockSettingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".password.PasswordMainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".password.PasswordDynamicActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".password.PasswordProListActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".password.PasswordProOfflineAddActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".lockmode.UnlockListModeActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".lockmode.UnlockModeEditActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".password.PasswordOldOfflineListActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".password.PasswordOldOfflineAddActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".password.PasswordProOfflineAdd2Activity"
+            android:exported="false" />
+
+        <activity
+            android:name=".password.PasswordOldOfflineAdd2Activity"
+            android:exported="false" />
+
+        <activity
+            android:name=".password.PasswordOldOnlineListActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".password.PasswordSingleRevokeListActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".records.BleLockProRecordsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".setting.VoiceSettingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".password.PasswordLockDeviceConfigActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".lockmode.UnlockModeAddActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".password.PasswordProOnlineDetailActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".password.PasswordOldOnlineDetailActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".user.UserDetailActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".user.UserAddActivity"
+            android:exported="false" />
+
+
+    </application>
+</manifest>

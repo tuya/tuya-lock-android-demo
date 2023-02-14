@@ -1,0 +1,70 @@
+{
+  "deviceDetail": [
+    {
+      "type": "header"
+    },
+    {
+      "type": "device_info"
+    },
+    {
+      "type": "device_net_info"
+    },
+    {
+      "type": "group_edit_devices"
+    },
+    {
+      "type": "off_line_warn"
+    },
+    {
+      "type": "section_other"
+    },
+    {
+      "type": "bind_multi_control_link"
+    },
+    {
+      "type": "group_create"
+    },
+    {
+      "type": "help_and_feedback"
+    },
+    {
+      "type": "add_icon_to_home_screen"
+    },
+    {
+      "type":"show_infrared_gateway_sub_device"
+    },
+    {
+      "type": "check_device_network"
+    },
+    {
+      "type": "check_firmware_update"
+    },
+    {
+      "type": "c_test_insert"
+    },
+    {
+      "type": "c_test_async_insert"
+    },
+    {
+      "type": "empty",
+      "height": 10
+    },
+    {
+      "type": "footer"
+    }
+  ],
+  "devBaseInfo": [
+    {
+      "type": "dev_icon"
+    },
+    {
+      "type": "set_icon"
+    },
+    {
+      "type": "set_name"
+    },
+    {
+      "type": "set_position"
+    }
+  ]
+}

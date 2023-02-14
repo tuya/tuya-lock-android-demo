@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lock_module_title">LOCK DEMO</string>
+    <string name="lock_module_list">ble Lock list</string>
+    <string name="device_online">Online</string>
+    <string name="device_offline">Offline</string>
+
+    <string name="door_lock_member">door lock member</string>
+    <string name="ble_connection">ble connection</string>
+    <string name="ble_unlock_and_lock">ble unlock and lock</string>
+    <string name="door_lock_record">door lock record</string>
+    <string name="unlock_mode_management">unlock mode management</string>
+    <string name="general_expansion_unlock">General Expansion Unlock</string>
+    <string name="password_management">password management</string>
+    <string name="door_lock_settings">door lock settings</string>
+
+    <string name="user_add">add user</string>
+    <string name="user_name">user name</string>
+    <string name="user_avatar_file">avatar file</string>
+    <string name="user_unlock_allowed">Whether allowed unlock with bluetooth</string>
+    <string name="user_is_permanent">Whether the user is permanent</string>
+    <string name="user_effective_timestamp">effective(ms)</string>
+    <string name="user_invalid_timestamp">invalid(ms)</string>
+    <string name="user_unlock_yes">YES</string>
+    <string name="user_unlock_no">NO</string>
+    <string name="user_delete">Delete</string>
+    <string name="user_detail">Detail</string>
+    <string name="user_in_permanent">permanent</string>
+
+    <string name="user_update">update user</string>
+    <string name="user_id">userId: </string>
+
+    <string name="ble_near_new_version">near new version</string>
+    <string name="ble_near_old_version">near old version</string>
+    <string name="ble_far_switch_lock">far switch lock</string>
+    <string name="unlock">unlock</string>
+    <string name="lock">lock</string>
+
+    <string name="unlock_records">unlock records</string>
+    <string name="alarm_records">alarm records</string>
+
+    <string name="remote_unlock_title">is remote unlock: </string>
+    <string name="has_set_voice_password">has set voice password: </string>
+    <string name="set_voice_password">set voice password:</string>
+    <string name="set_voice_password_open">OPEN</string>
+    <string name="set_voice_password_close">CLOSE</string>
+
+    <string name="submit">submit</string>
+
+    <string name="password_customize_1">password customize(1.0Version)</string>
+    <string name="password_customize_2">password customize(2.0Version, With cycle and without cycle)</string>
+    <string name="password_offline">Offline password</string>
+    <string name="password_dynamic">dynamic password</string>
+    <string name="password_list">password list</string>
+
+    <string name="password_offline_add">password offline add</string>
+    <string name="password_offline_update">update</string>
+    <string name="password_offline_delete">delete</string>
+    <string name="password_offline_clear">clear</string>
+
+    <string name="multiple">multiple</string>
+    <string name="single">single</string>
+    <string name="clear_all">clear all</string>
+
+    <string name="to_be_used">to be used</string>
+    <string name="used">used</string>
+    <string name="expired">expired</string>
+
+    <string name="password_add">ADD</string>
+</resources>

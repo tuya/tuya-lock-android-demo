@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/get_cycle_temp_passwords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="get 循环 temp passwords" />
+
+        <Button
+            android:id="@+id/create_cycle_temp_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="create 循环 temp password" />
+
+        <Button
+            android:id="@+id/modify_cycle_temp_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="modify 循环 temp password" />
+
+        <Button
+            android:id="@+id/get_temp_passwords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="get temp passwords" />
+
+        <Button
+            android:id="@+id/modify_temp_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="modify temp password" />
+
+        <Button
+            android:id="@+id/create_temp_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="create temp password" />
+
+
+        <Button
+            android:id="@+id/delete_temp_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="delete temp password" />
+
+        <Button
+            android:id="@+id/delete_invalid_temp_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="delete invalid temp password" />
+
+
+        <Button
+            android:id="@+id/get_home_users"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="get home users" />
+
+        <Button
+            android:id="@+id/get_lock_users"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="get lock users" />
+
+        <Button
+            android:id="@+id/add_lock_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="add lock user" />
+
+        <Button
+            android:id="@+id/update_lock_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="update lock user" />
+
+        <Button
+            android:id="@+id/delete_lock_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="delete lock user" />
+
+        <Button
+            android:id="@+id/get_alarm_records"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="get alarm records" />
+
+        <Button
+            android:id="@+id/get_unlock_records"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="get unlock records" />
+
+        <Button
+            android:id="@+id/get_hijack_records"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="get hijack records" />
+
+        <Button
+            android:id="@+id/get_dynamic_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="get dynamic password" />
+
+        <Button
+            android:id="@+id/is_online"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="is online" />
+
+        <Button
+            android:id="@+id/connect_device"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="connect device" />
+
+        <Button
+            android:id="@+id/unlock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="unlock" />
+
+        <Button
+            android:id="@+id/lock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="lock" />
+
+
+        <Button
+            android:id="@+id/add_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="添加password" />
+
+        <Button
+            android:id="@+id/update_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="更新password" />
+
+        <Button
+            android:id="@+id/delete_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="删除password" />
+
+        <Button
+            android:id="@+id/add_fingerprint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="添加指纹" />
+
+        <Button
+            android:id="@+id/update_fingerprint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="更新指纹密码" />
+
+        <Button
+            android:id="@+id/cancel_fingerprint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="取消指纹添加" />
+
+        <Button
+            android:id="@+id/delete_fingerprint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="删除指纹密码" />
+
+    </LinearLayout>
+
+
+</ScrollView>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lock_module_title">门锁DEMO</string>
+    <string name="lock_module_list">蓝牙门锁列表</string>
+    <string name="device_online">在线</string>
+    <string name="device_offline">离线</string>
+
+    <string name="door_lock_member">门锁成员</string>
+    <string name="ble_connection">蓝牙连接</string>
+    <string name="ble_unlock_and_lock">蓝牙解锁和落锁</string>
+    <string name="door_lock_record">门锁记录</string>
+    <string name="unlock_mode_management">解锁方式管理</string>
+    <string name="general_expansion_unlock">通用拓展解锁</string>
+    <string name="password_management">密码管理</string>
+    <string name="door_lock_settings">门锁设置</string>
+
+    <string name="user_add">添加成员</string>
+    <string name="user_name">成员名</string>
+    <string name="user_avatar_file">用户头像</string>
+    <string name="user_unlock_allowed">是否允许蓝牙解锁</string>
+    <string name="user_is_permanent">是否永久账号</string>
+    <string name="user_effective_timestamp">生效时间(ms)</string>
+    <string name="user_invalid_timestamp">失效时间(ms)</string>
+    <string name="user_unlock_yes">是</string>
+    <string name="user_unlock_no">否</string>
+    <string name="user_delete">删除</string>
+    <string name="user_detail">详情</string>
+    <string name="user_in_permanent">永久</string>
+
+    <string name="user_update">更新成员信息</string>
+    <string name="user_id">userId: </string>
+
+    <string name="ble_near_new_version">新版近场</string>
+    <string name="ble_near_old_version">老版近场</string>
+    <string name="ble_far_switch_lock">远程开关锁</string>
+    <string name="unlock">解锁</string>
+    <string name="lock">落锁</string>
+
+    <string name="unlock_records">开锁记录</string>
+    <string name="alarm_records">告警记录</string>
+
+    <string name="remote_unlock_title">远程开门是否支持: </string>
+    <string name="has_set_voice_password">是否设置语音密码: </string>
+    <string name="set_voice_password">设置语音密码</string>
+    <string name="set_voice_password_open">开</string>
+    <string name="set_voice_password_close">关</string>
+
+    <string name="submit">提交</string>
+
+    <string name="password_customize_1">自定义临时密码（1.0版本）</string>
+    <string name="password_customize_2">自定义临时密码（2.0版本，带周期和不带周期）</string>
+    <string name="password_offline">离线密码</string>
+    <string name="password_dynamic">动态密码</string>
+    <string name="password_list">密码列表</string>
+
+    <string name="password_offline_add">添加离线密码</string>
+    <string name="password_offline_update">更新</string>
+    <string name="password_offline_delete">删除</string>
+    <string name="password_offline_clear">清空</string>
+
+    <string name="multiple">多次</string>
+    <string name="single">单次</string>
+    <string name="clear_all">清空</string>
+
+    <string name="to_be_used">未使用</string>
+    <string name="used">已使用</string>
+    <string name="expired">已到期</string>
+
+    <string name="password_add">添加</string>
+</resources>
