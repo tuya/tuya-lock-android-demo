@@ -22,6 +22,8 @@ import com.tuya.smart.optimus.lock.api.bean.ProRecord;
 import com.tuya.smart.optimus.sdk.TuyaOptimusSdk;
 import com.tuya.smart.sdk.optimus.lock.bean.ble.RecordRequest;
 
+import java.util.ArrayList;
+
 
 /**
  * 开锁记录和告警记录
@@ -31,6 +33,7 @@ public class BleLockProRecordsActivity extends AppCompatActivity {
     private ITuyaBleLockV2 tuyaLockDevice;
     private RecordProListAdapter listAdapter;
     private final RecordRequest request = new RecordRequest();
+    private final ArrayList<RecordRequest.LogRecord> logCategories = new ArrayList<>();
 
 
     @Override
@@ -55,18 +58,25 @@ public class BleLockProRecordsActivity extends AppCompatActivity {
         listAdapter.setDevice(deviceId);
         unlock_records_list.setAdapter(listAdapter);
 
-        request.setLogCategories(RecordRequest.LogRecord.UNLOCK_RECORD);
+        logCategories.add(RecordRequest.LogRecord.UNLOCK_RECORD);
+        logCategories.add(RecordRequest.LogRecord.CLOSE_RECORD);
+        logCategories.add(RecordRequest.LogRecord.ALARM_RECORD);
+        logCategories.add(RecordRequest.LogRecord.OPERATION);
 
         FlowRadioGroup records_type = findViewById(R.id.records_type);
         records_type.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == R.id.unlock_records) {
-                request.setLogCategories(RecordRequest.LogRecord.UNLOCK_RECORD);
+                logCategories.clear();
+                logCategories.add(RecordRequest.LogRecord.UNLOCK_RECORD);
             } else if (checkedId == R.id.close_records) {
-                request.setLogCategories(RecordRequest.LogRecord.CLOSE_RECORD);
+                logCategories.clear();
+                logCategories.add(RecordRequest.LogRecord.CLOSE_RECORD);
             } else if (checkedId == R.id.alarm_records) {
-                request.setLogCategories(RecordRequest.LogRecord.ALARM_RECORD);
+                logCategories.clear();
+                logCategories.add(RecordRequest.LogRecord.ALARM_RECORD);
             } else if (checkedId == R.id.operation_records) {
-                request.setLogCategories(RecordRequest.LogRecord.OPERATION);
+                logCategories.clear();
+                logCategories.add(RecordRequest.LogRecord.OPERATION);
             }
             getUnlockRecords();
         });
@@ -86,6 +96,7 @@ public class BleLockProRecordsActivity extends AppCompatActivity {
     }
 
     private void getUnlockRecords() {
+        request.setLogCategories(logCategories);
         request.setLimit(10);
         tuyaLockDevice.getProUnlockRecordList(request, new ITuyaResultCallback<ProRecord>() {
             @Override

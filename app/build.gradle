@@ -8,7 +8,6 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.lock.sdk.sample"
         minSdkVersion 21
         targetSdkVersion 31
         versionCode 1
@@ -16,6 +15,8 @@ android {
 
         Properties properties = new Properties()
         properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+        applicationId "${properties.getProperty("applicationId")}"
         manifestPlaceholders = [
                 TUYA_SMART_APPKEY: "${properties.getProperty("appKey")}",
                 TUYA_SMART_SECRET: "${properties.getProperty("appSecret")}",

@@ -9,6 +9,15 @@ buildscript {
         maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
         maven { url 'https://developer.huawei.com/repo/' }
 
+        // 预发maven仓库
+//        maven {
+//            url "https://maven.tuya-inc.top/repository/maven-android-pre/"
+//        }
+//// 对外maven仓库
+//        maven {
+//            url "https://maven-other.tuya.com/repository/maven-releases/"
+//        }
+
         maven { url 'https://jitpack.io' }
         google()
         mavenCentral()
@@ -31,6 +40,15 @@ allprojects {
         maven { url 'http://central.maven.org/maven2/' }
         maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
         maven { url 'https://developer.huawei.com/repo/' }
+
+        // 预发maven仓库
+//        maven {
+//            url "https://maven.tuya-inc.top/repository/maven-android-pre/"
+//        }
+//// 对外maven仓库
+//        maven {
+//            url "https://maven-other.tuya.com/repository/maven-releases/"
+//        }
 
         maven { url 'https://jitpack.io' }
         google()

@@ -41,5 +41,5 @@ dependencies {
 
     implementation project(':base_res')
 //    api 'com.tuya.smart:tuyasmart-lock-sdk:1.2.6'
-    api 'com.tuya.smart:tuyasmart-lock-sdk:2.0.0'
+    api 'com.tuya.smart:tuyasmart-lock-sdk:2.0.1'
 }
