@@ -1,7 +1,9 @@
-rootProject.name = "Tuya-Lock-Android-Demo"
+include ':ipc'
+include ':base_res'
+include ':device_management'
+include ':device_config'
 include ':app'
-
-include ':panel'
-include ':activator'
-include ':family'
-
+include ':home'
+include ':sweeper'
+include ':lock'
+rootProject.name = "ThingSDKSample"

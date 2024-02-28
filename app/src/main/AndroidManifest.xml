@@ -1,60 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.tuya.smart.bizubundle.demo">
+    package="com.tuya.appsdk.sample">
+
 
     <application
-        android:requestLegacyExternalStorage="true"
-        android:name=".TuyaSmartApp"
-        android:allowBackup="false"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="false"
-        android:theme="@style/Base_BizBundle_Theme"
-        tools:replace="android:theme,android:supportsRtl,android:allowBackup">
-        <activity
-            android:name=".MainActivity"
-            android:launchMode="singleTask">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-                <!-- demo use only start -->
-                <action android:name="tuyasmart_demo_main" />
-                <!-- demo use only end -->
-            </intent-filter>
-        </activity>
-
-        <activity-alias
-            android:name="com.tuya.smart.hometab.activity.shortcut"
-            android:exported="true"
-            android:targetActivity=".MainActivity">
-
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            -->
-        </activity-alias>
+        android:supportsRtl="true"
+        android:name=".BaseApplication"
+        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+        tools:replace="android:allowBackup,android:supportsRtl">
 
         <meta-data
-            android:name="TUYA_SMART_APPKEY"
+            android:name="THING_SMART_APPKEY"
             android:value="${TUYA_SMART_APPKEY}" />
         <meta-data
-            android:name="TUYA_SMART_SECRET"
+            android:name="THING_SMART_SECRET"
             android:value="${TUYA_SMART_SECRET}" />
-        <meta-data
-            android:name="PACKAGE_NAME"
-            android:value="${PACKAGE_NAME}" /> <!-- demo use only start -->
+
+        <!--        Main        -->
         <activity
-            android:name="com.tuya.smart.demo_login.base.activity.SplashActivity"
-            android:theme="@style/SplashTheme">
+            android:name=".main.MainSampleListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!--        User        -->
+        <activity
+            android:name=".user.main.UserFuncActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".user.login.UserLoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".user.register.UserRegisterActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".user.resetPassword.UserResetPasswordActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".user.info.UserInfoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

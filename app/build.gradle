@@ -1,118 +1,112 @@
-apply plugin: 'com.android.application'
-apply plugin: 'dagger.hilt.android.plugin'
+plugins {
+    id 'com.android.application'
+
+}
 
 android {
-    signingConfigs {
-
-    }
-    compileSdkVersion 31
-    buildToolsVersion "30.0.2"
+    compileSdkVersion 30
+    buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.test007.demo1"
-        minSdkVersion 21
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-        multiDexEnabled true
-
         Properties properties = new Properties()
         properties.load(project.rootProject.file('local.properties').newDataInputStream())
-        manifestPlaceholders = [
-                TUYA_SMART_APPKEY           : "${properties.getProperty("appKey")}",
-                TUYA_SMART_SECRET           : "${properties.getProperty("appSecret")}",
-                INTERNAL_HOST               : "${properties.getProperty("app_scheme")}".concat('.app.tuya.com'),
-                ALEXA_AUTH_INTERNAL_HOST    : "${properties.getProperty("app_scheme")}".concat('.applink.smart321.com'),
-                ALEXA_AUTH_INTERNAL_HOST_NEW: "${properties.getProperty("app_scheme")}".toLowerCase(Locale.ENGLISH).concat('.applink.smart321.com'),
 
-                PACKAGE_NAME                : applicationId
+        def debugStore = [
+                debugStoreFilePath: "debug.keystore",
+                debugStorePassword: "android",
+                debugKeyAlias     : "androiddebugkey",
+                debugKeyPassword  : "android"
         ]
-        println '-----------'+properties.getProperty("appSecret")
+
+        signingConfigs {
+            debug {
+                storeFile file(debugStore.debugStoreFilePath)
+                storePassword debugStore.debugStorePassword
+                keyAlias debugStore.debugKeyAlias
+                keyPassword debugStore.debugKeyPassword
+                v1SigningEnabled true
+                v2SigningEnabled true
+            }
+        }
+
+        applicationId "${properties.getProperty("applicationId")}"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        manifestPlaceholders = [
+                TUYA_SMART_APPKEY: "${properties.getProperty("appKey")}",
+                TUYA_SMART_SECRET: "${properties.getProperty("appSecret")}",
+        ]
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
         ndk {
             abiFilters "armeabi-v7a", "arm64-v8a"
         }
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     packagingOptions {
+        // 多个aar存在此so，需要选择第一个
         pickFirst 'lib/*/libc++_shared.so'
         pickFirst 'lib/*/libyuv.so'
         pickFirst 'lib/*/libopenh264.so'
+        pickFirst 'lib/*/liblog.so'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    defaultConfig {
+        ndk { abiFilters "armeabi-v7a", "arm64-v8a" }
     }
 
     buildTypes {
+        debug{
+            signingConfig signingConfigs.debug
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 
-    android {
-        compileOptions {
-            sourceCompatibility 1.8
-            targetCompatibility 1.8
-        }
-    }
-    packagingOptions {
-        exclude 'AndroidManifest.xml'
-    }
+
+}
+
+
+configurations.all {
+    exclude group: "com.thingclips.smart" ,module: 'thingsmart-modularCampAnno'
 }
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
 
-
-    implementation project(path: ':panel')
-    implementation project(path: ':activator')
-    implementation project(path: ':family')
-
-    implementation "com.tuya.smart:tuyasmart-theme-open:1.1.0"
-    implementation "com.tuya.smart:tuyasmart-commonbiz-relation-api:3.31.0"
-    implementation "com.tuya.smart:tuyasmart-lock-sdk:1.2.0"
-
-    //demo use only start
-    api 'com.tuya.smart:tuyasmart:3.34.9'
-
-    implementation 'com.tuya.smart:tuyasmart-demo-login:3.32.5-rc.2'
+    implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
-    implementation "androidx.multidex:multidex:2.0.1"
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'com.google.android.material:material:1.5.0'
-    //demo use only end
-
-    testImplementation 'junit:junit:4.12'
+    implementation 'com.google.android.material:material:1.3.0-alpha04'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
+    testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    annotationProcessor 'com.google.dagger:hilt-android-compiler:2.36'
-    implementation 'com.google.dagger:hilt-android:2.36'
 
-}
+    implementation 'com.alibaba:fastjson:1.1.67.android'
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.14.9'
 
-apply plugin: 'com.tuya.open.theme'
-apply plugin: 'kotlin-android'
-tuyaOpenTheme {
-    // 浅色模式配置, 目前不支持深色模式的配置
-    lightTheme {
-        color {
-            // 背景色
-            backgroundColor "#EBB759"
-            // 主题色
-            themeColor "#598DEB"
-            // 警告色
-            warningColor "#FF4444"
-            // 提示色
-            tipColor "#00CC99"
-            // 引导色
-            guideColor "#E819FA"
-            // tab选中背景色
-            tabBarSelectColor "#FF5A28"
-            // 导航栏背景色配置
-            navigationBarColor "#FFFFFF"
-        }
-        colorAlpha {
-            // 弹窗蒙层透明度
-            alertMaskAlpha 0.3
-        }
-    }
+    implementation project(':base_res')
+    implementation project(":home")
+    implementation project(":device_config")
+    implementation project(":device_management")
+    implementation project(":ipc")
+    implementation project(":sweeper")
+    implementation project(":lock")
+
+    implementation 'cn.yipianfengye.android:zxing-library:2.2'
+
 }
