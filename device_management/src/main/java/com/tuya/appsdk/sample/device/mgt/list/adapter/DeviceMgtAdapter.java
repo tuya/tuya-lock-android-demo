@@ -27,10 +27,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.tuya.appsdk.sample.device.mgt.R;
 import com.tuya.appsdk.sample.device.mgt.control.activity.DeviceMgtControlActivity;
 import com.tuya.appsdk.sample.device.mgt.list.activity.DeviceSubZigbeeActivity;
+import com.tuya.lock.demo.LockDeviceUtils;
 import com.tuya.smart.android.demo.camera.CameraUtils;
-import com.tuya.smart.api.MicroContext;
 import com.tuya.smart.home.sdk.TuyaHomeSdk;
-import com.tuya.smart.panelcaller.api.AbsPanelCallerService;
 import com.tuya.smart.sdk.api.IResultCallback;
 import com.tuya.smart.sdk.api.ITuyaDevice;
 import com.tuya.smart.sdk.bean.DeviceBean;
@@ -70,7 +69,7 @@ public final class DeviceMgtAdapter extends RecyclerView.Adapter<DeviceMgtAdapte
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                String devId = ((DeviceBean) DeviceMgtAdapter.this.getData().get(holder.getAdapterPosition())).getDevId();
+                String devId = DeviceMgtAdapter.this.getData().get(holder.getAdapterPosition()).getDevId();
                 ITuyaDevice mDevice = TuyaHomeSdk.newDeviceInstance(devId);
                 mDevice.removeDevice(new IResultCallback() {
                     @Override
@@ -89,17 +88,20 @@ public final class DeviceMgtAdapter extends RecyclerView.Adapter<DeviceMgtAdapte
             }
         });
         holder.itemView.setOnClickListener(v -> {
-            if (CameraUtils.ipcProcess(v.getContext(), ((DeviceBean) DeviceMgtAdapter.this.getData().get(holder.getAdapterPosition())).getDevId())) {
+            DeviceBean deviceBean = DeviceMgtAdapter.this.getData().get(holder.getAdapterPosition());
+            if (CameraUtils.ipcProcess(v.getContext(), deviceBean.getDevId())) {
                 return;
             }
-            AbsPanelCallerService service = MicroContext.getServiceManager().findServiceByInterface(AbsPanelCallerService.class.getName());
+            if (LockDeviceUtils.check(v.getContext(), deviceBean.getDevId())) {
+                return;
+            }
             switch (type) {
                 case 1:
-                    service.goPanelWithCheckAndTip(mActivity, ((DeviceBean) DeviceMgtAdapter.this.getData().get(holder.getAdapterPosition())).getDevId());
+                case 3:
                     // Navigate to device management
-//                    Intent intent = new Intent(v.getContext(), DeviceMgtControlActivity.class);
-//                    intent.putExtra("deviceId", ((DeviceBean) DeviceMgtAdapter.this.getData().get(holder.getAdapterPosition())).getDevId());
-//                    v.getContext().startActivity(intent);
+                    Intent intent = new Intent(v.getContext(), DeviceMgtControlActivity.class);
+                    intent.putExtra("deviceId", ((DeviceBean) DeviceMgtAdapter.this.getData().get(holder.getAdapterPosition())).getDevId());
+                    v.getContext().startActivity(intent);
                     break;
                 case 2:
                     // Navigate to zigBee sub device management
@@ -107,19 +109,13 @@ public final class DeviceMgtAdapter extends RecyclerView.Adapter<DeviceMgtAdapte
                     intent2.putExtra("deviceId", ((DeviceBean) DeviceMgtAdapter.this.getData().get(holder.getAdapterPosition())).getDevId());
                     v.getContext().startActivity(intent2);
                     break;
-                case 3:
-                    // Navigate to device management
-                    Intent intent3 = new Intent(v.getContext(), DeviceMgtControlActivity.class);
-                    intent3.putExtra("deviceId", ((DeviceBean) DeviceMgtAdapter.this.getData().get(holder.getAdapterPosition())).getDevId());
-                    v.getContext().startActivity(intent3);
-                    break;
             }
         });
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DeviceMgtAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         DeviceBean bean = (DeviceBean) data.get(position);
         holder.tvDeviceName.setText(bean.name);
         holder.tvStatus.setText(holder.itemView.getContext().getString(bean.getIsOnline() ? R.string.device_mgt_online : R.string.device_mgt_offline));

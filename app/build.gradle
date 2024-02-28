@@ -8,15 +8,33 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+        def debugStore = [
+                debugStoreFilePath: "debug.keystore",
+                debugStorePassword: "android",
+                debugKeyAlias     : "androiddebugkey",
+                debugKeyPassword  : "android"
+        ]
+
+        signingConfigs {
+            debug {
+                storeFile file(debugStore.debugStoreFilePath)
+                storePassword debugStore.debugStorePassword
+                keyAlias debugStore.debugKeyAlias
+                keyPassword debugStore.debugKeyPassword
+                v1SigningEnabled true
+                v2SigningEnabled true
+            }
+        }
+
+        applicationId "${properties.getProperty("applicationId")}"
         minSdkVersion 21
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
-        Properties properties = new Properties()
-        properties.load(project.rootProject.file('local.properties').newDataInputStream())
-
-        applicationId "${properties.getProperty("applicationId")}"
         manifestPlaceholders = [
                 TUYA_SMART_APPKEY: "${properties.getProperty("appKey")}",
                 TUYA_SMART_SECRET: "${properties.getProperty("appSecret")}",
@@ -25,8 +43,6 @@ android {
 
         ndk {
             abiFilters "armeabi-v7a", "arm64-v8a"
-        }
-        signingConfigs {
         }
     }
 
@@ -47,6 +63,9 @@ android {
     }
 
     buildTypes {
+        debug{
+            signingConfig signingConfigs.debug
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -81,7 +100,7 @@ dependencies {
     implementation project(":device_config")
     implementation project(":device_management")
     implementation project(":ipc")
-    implementation project(":ble_lock_demo")
+    implementation project(':lock')
 
     implementation 'cn.yipianfengye.android:zxing-library:2.2'
 

@@ -8,7 +8,6 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONObject;
 import com.tuya.appsdk.sample.device.mgt.R;
@@ -20,8 +19,6 @@ import com.tuya.smart.sdk.bean.TuyaSmartThingProperty;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.HashMap;
 
 import kotlin.jvm.JvmOverloads;
 

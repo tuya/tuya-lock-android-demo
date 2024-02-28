@@ -299,7 +299,7 @@ public class DeviceConfigBleAndDualActivity extends AppCompatActivity implements
     }
 
 
-    private static class BleDeviceListAdapter extends RecyclerView.Adapter<DeviceConfigBleAndDualActivity.VH> {
+    private static class BleDeviceListAdapter extends RecyclerView.Adapter<VH> {
         private final DeviceConfigBleAndDualActivity activity;
         public BleDeviceListAdapter(DeviceConfigBleAndDualActivity activity) {
             this.activity = activity;
@@ -307,12 +307,12 @@ public class DeviceConfigBleAndDualActivity extends AppCompatActivity implements
 
         @NonNull
         @Override
-        public DeviceConfigBleAndDualActivity.VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new DeviceConfigBleAndDualActivity.VH(LayoutInflater.from(parent.getContext()).inflate(R.layout.device_ble_device_item, parent, false));
+        public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            return new VH(LayoutInflater.from(parent.getContext()).inflate(R.layout.device_ble_device_item, parent, false));
         }
 
         @Override
-        public void onBindViewHolder(@NonNull DeviceConfigBleAndDualActivity.VH holder, int position) {
+        public void onBindViewHolder(@NonNull VH holder, int position) {
             if (activity != null && activity.infoBeanList.size() > position){
                 holder.mTvDeviceName.setText(activity.infoBeanList.get(position).getName());
                 holder.mBtnItemStartActivator.setOnClickListener(v -> {

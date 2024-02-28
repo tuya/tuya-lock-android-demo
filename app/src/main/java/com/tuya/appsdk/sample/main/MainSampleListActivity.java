@@ -20,7 +20,6 @@ import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.tuya.lock.demo.main.LockFuncWidget;
 import com.tuya.appsdk.sample.R;
 import com.tuya.appsdk.sample.device.config.main.DeviceConfigFuncWidget;
 import com.tuya.appsdk.sample.device.mgt.main.DeviceMgtFuncWidget;
@@ -90,10 +89,6 @@ public final class MainSampleListActivity extends AppCompatActivity {
         // Device Management
         DeviceMgtFuncWidget deviceMgtFuncWidget = new DeviceMgtFuncWidget();
         llFunc.addView(deviceMgtFuncWidget.render(this));
-
-        // LOCK Management
-        LockFuncWidget lockFuncWidget = new LockFuncWidget();
-        llFunc.addView(lockFuncWidget.render(this));
     }
 
     @Override

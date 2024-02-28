@@ -6,4 +6,4 @@ include ':app'
 include ':home'
 
 rootProject.name = "TuyaSDKSample"
-include ':ble_lock_demo'
+include ':lock'

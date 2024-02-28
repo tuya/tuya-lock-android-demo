@@ -24,8 +24,6 @@ import com.tuya.appsdk.sample.home.list.adapter.HomeListPageType;
 import com.tuya.appsdk.sample.home.newHome.NewHomeActivity;
 import com.tuya.appsdk.sample.resource.HomeModel;
 import com.tuya.appsdk.sample.user.R;
-import com.tuya.smart.api.service.MicroServiceManager;
-import com.tuya.smart.commonbiz.bizbundle.family.api.AbsBizBundleFamilyService;
 import com.tuya.smart.home.sdk.TuyaHomeSdk;
 import com.tuya.smart.home.sdk.bean.HomeBean;
 import com.tuya.smart.home.sdk.callback.ITuyaHomeResultCallback;
@@ -83,11 +81,6 @@ public class HomeFuncWidget implements View.OnClickListener {
                 @Override
                 public void onSuccess(HomeBean bean) {
                     mTvCurrentHomeName.setText(bean.getName());
-
-                    AbsBizBundleFamilyService service = MicroServiceManager.getInstance().findServiceByInterface(AbsBizBundleFamilyService.class.getName());
-                    // 设置为当前家庭的 homeId 和 homeName
-                    service.shiftCurrentFamily(bean.getHomeId(), bean.getName());
-
                 }
 
                 @Override

@@ -303,6 +303,7 @@ public class CameraPanelActivity extends AppCompatActivity implements View.OnCli
         }
         cameraPTZHelper = new CameraPTZHelper(devId);
         cameraPTZHelper.bindPtzBoard(findViewById(R.id.sv_ptz_board));
+
     }
 
     private void showNotSupportToast() {

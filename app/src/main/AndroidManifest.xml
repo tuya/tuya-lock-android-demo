@@ -5,15 +5,13 @@
 
 
     <application
-        android:name=".BaseApplication"
         android:allowBackup="true"
-        android:exported="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Base_BizBundle_Theme"
-        android:requestLegacyExternalStorage="true"
-        tools:replace="android:allowBackup,android:supportsRtl,android:theme">
+        android:name=".BaseApplication"
+        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+        tools:replace="android:allowBackup,android:supportsRtl">
 
         <meta-data
             android:name="TUYA_SMART_APPKEY"
@@ -31,8 +29,8 @@
         <!--        User        -->
         <activity
             android:name=".user.main.UserFuncActivity"
-            android:exported="false"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
